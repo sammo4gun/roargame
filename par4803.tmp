@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo51ta4o4ib5q"]
+
+[ext_resource type="Script" path="res://particle.gd" id="1_jmwu6"]
+[ext_resource type="Texture2D" uid="uid://iompx3w2rouv" path="res://randomsprites/triangle.png" id="1_qlcow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hide3"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0d4b"]
+radius = 36.2215
+
+[node name="Particle" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 0.0
+script = ExtResource("1_jmwu6")
+x_velocity = null
+y_velocity = null
+speed_min = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2.38419e-07, 1)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("1_qlcow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hide3")
+
+[node name="ParticleFinder" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="ParticleSupport" type="CollisionShape2D" parent="ParticleFinder"]
+shape = SubResource("CircleShape2D_e0d4b")
+
+[connection signal="body_entered" from="ParticleFinder" to="." method="_on_particle_finder_body_entered"]
+[connection signal="body_exited" from="ParticleFinder" to="." method="_on_particle_finder_body_exited"]

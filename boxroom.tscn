@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3iac52net4n7"]
+
+[ext_resource type="Script" path="res://mouse_click.gd" id="1_a0mfq"]
+[ext_resource type="PackedScene" uid="uid://2e0i7qv6vuk4" path="res://wall_moment.tscn" id="2_vjvcj"]
+
+[node name="testroom" type="Node2D"]
+
+[node name="MouseClick" type="Node" parent="."]
+script = ExtResource("1_a0mfq")
+
+[node name="WallMoment3" parent="." instance=ExtResource("2_vjvcj")]
+position = Vector2(894, 134)
+rotation = 1.83259
+
+[node name="WallMoment4" parent="." instance=ExtResource("2_vjvcj")]
+position = Vector2(280, 610)
+
+[node name="WallMoment2" parent="." instance=ExtResource("2_vjvcj")]
+position = Vector2(435, 76)
+
+[node name="WallMoment5" parent="." instance=ExtResource("2_vjvcj")]
+position = Vector2(342, 121)
+rotation = 1.83259
