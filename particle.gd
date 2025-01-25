@@ -48,7 +48,7 @@ func handle_visual_strength() -> bool:
 	return linear_velocity.length() < speed_min
 
 func set_tester():
-	color_vec = [1,0,1]
+	color_vec = [1,1,0]
 	self.test = true
 
 func get_speed():
