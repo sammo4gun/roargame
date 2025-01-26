@@ -6,8 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_hide3"]
 radius = 5.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e0d4b"]
-radius = 36.2215
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_67ldn"]
+radius = 8.0
+height = 46.0
 
 [node name="Particle" type="RigidBody2D"]
 collision_layer = 2
@@ -28,7 +29,9 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="ParticleSupport" type="CollisionShape2D" parent="ParticleFinder"]
-shape = SubResource("CircleShape2D_e0d4b")
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_67ldn")
 
 [connection signal="body_entered" from="ParticleFinder" to="." method="_on_particle_finder_body_entered"]
 [connection signal="body_exited" from="ParticleFinder" to="." method="_on_particle_finder_body_exited"]
