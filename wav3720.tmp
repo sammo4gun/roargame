@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgxr6vbmfgejp"]
+
+[ext_resource type="Script" path="res://wave.gd" id="1_d4o0s"]
+
+[node name="Wave" type="Node2D"]
+script = ExtResource("1_d4o0s")
+wave_speed = 200
+num_particles = 100
+slowdown_per_sec = 0.9
+slowdown_low_support_per_sec = 0.7

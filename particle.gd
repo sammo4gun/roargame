@@ -5,6 +5,7 @@ extends RigidBody2D
 @export var min_speed = 40
 @export var slowdown_per_sec = 0.5
 @export var slowdown_low_support_per_sec = 0.1
+@export var line_only = false
 
 @onready var sprite = $Sprite2D
 @onready var particle_hitbox = $ParticleFinder/ParticleSupport
@@ -21,7 +22,7 @@ func _ready() -> void:
 	linear_velocity = Vector2(x_velocity, y_velocity)
 	starting_velocity = linear_velocity.length()
 	particle_hitbox.disabled = true
-	#sprite.visible = false
+	sprite.visible = not line_only
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 	if not delay:
 		calc_angles()
-		#queue_redraw()
+		if line_only: queue_redraw()
 		handle_slowdown(delta)
 
 func handle_move(delta: float) -> void:
