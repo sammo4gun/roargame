@@ -4,18 +4,19 @@
 
 [sub_resource type="Curve" id="Curve_v8a6w"]
 max_value = 2.0
-_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.5, 2), 0.0, 0.0, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 2), 0.0, -4.0, 0, 0, Vector2(0.494737, 0.373626), 0.0, 0.0, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_aljk6"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.318681), 0.0, 0.0, 0, 0, Vector2(0.49505, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.318681), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [node name="Wave" type="Node2D"]
 script = ExtResource("1_d4o0s")
 wave_speed = 100
-total_particles = 100
+num_particles = 100
 slowdown_per_sec = 0.9
 slowdown_low_support_per_sec = 0.7
 focus_angle_curve = SubResource("Curve_v8a6w")
+focus_strength = 0.9
 focus_strength_curve = SubResource("Curve_aljk6")
